@@ -6,6 +6,8 @@ import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { FormsModule } from '@angular/forms';
 import { FloatLabelModule } from "primeng/floatlabel" 
+import { StepperModule } from 'primeng/stepper';
+import { AccordionModule } from 'primeng/accordion';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { FloatLabelModule } from "primeng/floatlabel"
     ButtonModule,
     ToastModule,
     FormsModule,
-    FloatLabelModule
+    FloatLabelModule,
+    StepperModule,
+    AccordionModule
   ]
 })
 export class PrimeNgModule { }

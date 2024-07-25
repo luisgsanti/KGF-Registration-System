@@ -1,0 +1,161 @@
+.todo {
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    min-height: calc(100vh - 90px);
+    /*box-shadow: 0 5px 10px rgba(209, 202, 202, 0.3);*/
+    padding: 2%;
+    /*background-color: #2e3b4e;*/
+    background: linear-gradient(to right, #3a72d3, #1e3c72); 
+  }
+  
+  
+  .contenido {
+    margin: 2% 6% 0;
+    box-shadow: 0 0px 20px #F1C40F;
+  }
+  
+  body {
+    background: linear-gradient(to right, #1e3c72, #3a72d3);
+  }
+  
+  .header {
+    /*background-color: #9d3de2;*/
+    color: white;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background: linear-gradient(to right, #1e3c72, #3a72d3);  
+  }
+  
+  .tituloLogo{
+      font-family: 'Cinzel Decorative', serif;
+      
+    }
+  
+  p, .titulo{
+      font-family: 'Cinzel', serif;
+  }
+  
+  .logo {
+    width: 240px;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  .text-container {
+    text-align: center;
+    flex-grow: 1;
+  }
+  
+  .text-container h1 {
+    margin: 10px 0;
+    font-size: 2em;
+    color: #F1C40F;
+  }
+  
+  .text-container p {
+    margin: 1px 0;
+    font-size: 1.1em;
+    color: #ffffff;
+  
+  }
+  
+  .titulo {
+    text-align: center;
+    color: #F1C40F;
+    width: auto;
+  }
+  
+  .ubicarCentro {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .ubicarFinal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  
+  /***********************************/
+  .label {
+    text-align: center;
+    font-weight: bold;
+    font-size: small;
+    color: #fff;
+  }
+
+  
+  .styleButton {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    width: 200px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    margin: 16px 1%;
+  }
+  
+  .btnDone {
+    background-color: #F1C40F;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .fa-forward {
+    margin-left: 6px;
+  }
+  
+  .fa-backward {
+    margin-right: 6px;
+  }
+  
+  .total{
+      text-align: right;
+  }
+  
+  /*STEPPER*/
+  .mat-stepper-vertical {
+    margin-top: 8px;
+  }
+  
+  .mat-mdc-form-field {
+    margin-top: 16px;
+  }
+  
+  .stepper {
+    background: linear-gradient(to right, #1e3c72, #3a72d3);
+    padding: 1rem;
+    border-radius: 8px;
+    color: #ffffff; /* Cambia el color del texto si es necesario */
+}
+
+.stepper-panel {
+    background: none; /* Asegúrate de que los paneles no tengan fondo blanco */
+}
+  
+  .stepperLabel {
+    color: #fff;
+    font-weight: bold;
+  }
+  
+
+
+  .p-stepper {
+    flex-basis: 50rem;
+} 

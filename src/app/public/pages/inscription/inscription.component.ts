@@ -5,10 +5,12 @@ import { PrimeNgModule } from '../../../prime-ng/prime-ng.module';
 @Component({
   selector: 'app-inscription',
   standalone: true,
-  imports: [PrimeNgModule],
+  imports: [
+    PrimeNgModule      
+  ],
   templateUrl: './inscription.component.html',
-  styleUrl: './inscription.component.css'
+  styleUrls: ['./inscription.component.css']
 })
 export class InscriptionComponent {
-  value: string | undefined;
+
 }
