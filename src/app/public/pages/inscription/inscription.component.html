@@ -20,6 +20,267 @@
       <hr>
       <br>
 
+      <mat-stepper class="stepper" orientation="vertical" [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel><span class="stepperLabel">DATOS PERSONALES</span></ng-template>
+            <div class="row g-2">
+              <label class="col-sm-2 col-form-label label">NOMBRE BENEFICIARIO:</label>
+              <div class="col-sm">
+                <input type="text" class="form-control">
+              </div>
+              <label class="col-sm-2 col-form-label label">IDENTIFICACION:</label>
+              <div class="col-sm">
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <br>
+            <div class="row g-2">
+              <label class="col-sm-2 col-form-label label">EMAIL:</label>
+              <div class="col-sm">
+                <input type="text" class="form-control">
+              </div>
+              <label class="col-sm-2 col-form-label label">CELULAR:</label>
+              <div class="col-sm">
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <br>
+            <div class="row g-2">
+              <label class="col-sm-2 col-form-label label">DIRECCION:</label>
+              <div class="col-sm">
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <br>
+            <div class="row g-2">
+              <label class="col-sm-2 col-form-label label">MUNICIPIO:</label>
+              <div class="col-sm">
+                <input type="text" class="form-control">
+              </div>
+              <label class="col-sm-2 col-form-label label">CIUDAD:</label>
+              <div class="col-sm">
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <br>
+            <div class="row g-2">
+              <label class="col-sm-2 col-form-label label">DEPARTAMENTO:</label>
+              <div class="col-sm">
+                <input type="text" class="form-control">
+              </div>
+              <label class="col-sm-2 col-form-label label">PAIS:</label>
+              <div class="col-sm">
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div class="row g-2">
+              <label class="col-sm-2 col-form-label label">CUENTA DE BANCO:</label>
+              <div class="col-sm">
+                <input type="text" class="form-control">
+              </div>
+              <label class="col-sm-2 col-form-label label">TIPO CUENTA:</label>
+              <div class="col-sm">
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div class="row g-2">
+              <div class="col-md-6">
+                <label class="form-label label" style="text-align: center; width: 100%;">ADJUNTAR DOCUMENTO DE IDENTIDAD</label>
+                <input class="form-control labelFile" type="file">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label label" style="text-align: center;width: 100%; ">ADJUNTAR CERTIFICACION BANCARIA</label>
+                <input  class="form-control labelFile" type="file">
+
+              </div>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div class="row g-2">
+              <label class="col-sm-2 col-form-label label">TIPO DE BONO:</label>
+              <div class="col-sm">
+                <input type="text" class="form-control">
+              </div>
+              <label class="col-sm-2 col-form-label label">CODIGO:</label>
+              <div class="col-sm">
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <br>
+            <div class="ubicarFinal">
+              <button type="button" class="styleButton btnDone" mat-button matStepperNext>
+                SIGUIENTE
+                <span>
+                  <i class="fa-solid fa-forward"></i>
+                </span>
+              </button>
+            </div>
+
+          </form>
+        </mat-step>
+        <mat-step>
+          <form>
+            <ng-template matStepLabel><span class="stepperLabel">CANCELACION DE DEUDAS. JUBILEO</span></ng-template>
+            <br>
+            <div class="row g-2">
+              <label class="col-sm-3 col-form-label label">VALOR TOTAL DE LA FACTURA:</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div class="row g-2">
+              <div class="col-md-6">
+                <label class="form-label label" style="text-align: center;width: 100%; ">ADJUNTAR COMPROBANTE DE DEUDA</label>
+                <input class="form-control labelFile" type="file">
+              </div>
+            </div>
+            <br>
+            <div class="button-container">
+              <button type="button" class="styleButton btnDone" mat-button matStepperPrevious>
+                <span>
+                  <i class="fa-solid fa-backward"></i>
+                </span>
+                ANTERIOR
+              </button>
+              <button type="button" class="styleButton btnDone" mat-button matStepperNext>
+                SIGUIENTE
+                <span>
+                  <i class="fa-solid fa-forward"></i>
+                </span>
+              </button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel><span class="stepperLabel">CASA AMUEBLADA, AUTO, VEHICULO</span></ng-template>
+          <br>
+            <div class="row g-2">
+              <label class="col-sm-3 col-form-label label">VALOR TOTAL DE LA COTIZACION:</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div class="row g-2">
+              <div class="col-md-4">
+                <label class="form-label label" style="text-align: center;width: 100%; ">ADJUNTAR COTIZACION CASA</label>
+                <input class="form-control labelFile" type="file">
+
+              </div>
+              <div class="col-md-4">
+                <label class="form-label label" style="text-align: center;width: 100%; ">ADJUNTAR COTIZACION MUEBLES</label>
+                <input class="form-control labelFile" type="file">
+
+              </div>
+              <div class="col-md-4">
+                <label class="form-label label" style="text-align: center;width: 100%; ">ADJUNTAR COTIZACION VEHICULO</label>
+                <input class="form-control labelFile" type="file">
+
+              </div>
+            </div>
+            <br>
+          <div class="button-container">
+            <button type="button" class="styleButton btnDone" mat-button matStepperPrevious>
+              <span>
+                <i class="fa-solid fa-backward"></i>
+              </span>
+              ANTERIOR
+            </button>
+            <button type="button" class="styleButton btnDone" mat-button matStepperNext>
+              SIGUIENTE
+              <span>
+                <i class="fa-solid fa-forward"></i>
+              </span>
+            </button>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel><span class="stepperLabel">EMPRENDIMIENTO</span></ng-template>
+          <br>
+            <div class="row g-2">
+              <label class="col-sm-3 col-form-label label">VALOR TOTAL DE LA FACTURA:</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div class="row g-2">
+              <div class="col-md-6">
+                <label class="form-label label" style="text-align: center;width: 100%; ">ADJUNTAR PLAN DE EMPRENDIMIENTO</label>
+                <input class="form-control labelFile" type="file">
+              </div>
+            </div>
+            <br>
+
+          <div class="button-container">
+            <button type="button" class="styleButton btnDone" mat-button matStepperPrevious>
+              <span>
+                <i class="fa-solid fa-backward"></i>
+              </span>
+              ANTERIOR
+            </button>
+            <button type="button" class="styleButton btnDone" mat-button matStepperNext>
+              SIGUIENTE
+              <span>
+                <i class="fa-solid fa-forward"></i>
+              </span>
+            </button>
+          </div>
+        </mat-step>
+
+        <mat-step>
+          <ng-template matStepLabel><span class="stepperLabel">RESUMEN DE FACTURAS</span></ng-template>
+
+          <br>
+          <div class="row g-2">
+            <label class="col-sm-4 col-form-label label total">CANCELACION DE DEUDAS. JUBILEO:</label>
+            <label class="col-sm-4 col-form-label label">$ 0.000</label>
+          </div>
+          <div class="row g-2">
+            <label class="col-sm-4 col-form-label label total">CASA AMUEBLADA, AUTO, VEHICULO:</label>
+            <label class="col-sm-4 col-form-label label">$ 0.000</label>
+          </div>
+          <div class="row g-2">
+            <label class="col-sm-4 col-form-label label total">EMPRENDIMIENTO:</label>
+            <label class="col-sm-4 col-form-label label">$ 0.000</label>
+          </div>
+          <hr>
+          <div class="row g-2">
+            <label class="col-sm-4 col-form-label label total">TOTAL:</label>
+            <label class="col-sm-4 col-form-label label">$ 0.000</label>
+          </div>
+          <div class="row g-2">
+            <label class="col-sm-4 col-form-label label total">TOTAL EN USD:</label>
+            <label class="col-sm-4 col-form-label label">$ 0.000</label>
+          </div>
+          <br>
+          <br>
+          <div class="ubicarFinal">
+            <button type="button" class="styleButton btnDone">
+            
+              FINALIZAR REGISTRO
+            </button>
+          </div>
+        </mat-step>
+      </mat-stepper>
+
+
+
     </body>
   </div>
 </div>
