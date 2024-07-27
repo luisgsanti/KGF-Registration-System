@@ -11,10 +11,11 @@ export interface Enrollment{
     municipality:                   string;
     bankAccount:                    string;
     accountType:                    string;
+    bondType:                       string
+    bondCode:                       string;
 
-
-    RouteDocIdentification:         string;
-    RouteDocBankCertificate:        string;
+    routeDocIdentification:         string;
+    routeDocBankCertificate:        string;
 
     /********************************************/
 
