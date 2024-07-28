@@ -5,6 +5,7 @@ import { HomeLayoutComponent } from './layout/home-layout/home-layout.component'
 //pages
 import { HomeComponent } from './pages/home/home.component';
 import { InscriptionComponent } from './pages/inscription/inscription.component';
+import { PriceCodeComponent } from './pages/price-code/price-code.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
       children: [
         { path: 'home', component: HomeComponent },
         { path: 'inscription', component: InscriptionComponent },
+        { path: 'price-code', component: PriceCodeComponent },
       ]
   }
 ];
