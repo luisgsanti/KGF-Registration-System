@@ -1,22 +1,5 @@
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 10px;
-    margin: 0;
-    box-sizing: border-box;
-    background: linear-gradient(to right, #3a72d3, #1e3c72);
-
-}
-
-
-.nav-container p-button {
-    flex: 1;
-    text-align: center;
-    margin: 0;
-}
-
-.nav-container p-button{
-    width: 100%;
+@media (min-width: 1024px) {
+    .bordeTransparente  {
+        background: rgba(255, 255, 255, .02); border: 1px solid rgba(255, 255, 255, .08); border-radius: 999px;
+    }
 }

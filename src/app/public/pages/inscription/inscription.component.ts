@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { PrimeNgModule } from '../../../prime-ng/prime-ng.module';
 import { MatStepperModule } from '@angular/material/stepper';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Enrollment } from '../../interfaces/enrollment.interface';
@@ -9,11 +8,9 @@ import { Enrollment } from '../../interfaces/enrollment.interface';
   selector: 'app-inscription',
   standalone: true,
   imports: [
-    PrimeNgModule,
     MatStepperModule,
     FormsModule,
     ReactiveFormsModule, 
-    
   ],
   templateUrl: './inscription.component.html',
   styleUrls: ['./inscription.component.css']

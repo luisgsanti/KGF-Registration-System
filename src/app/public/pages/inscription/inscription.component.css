@@ -1,21 +1,10 @@
-.todo {
-    background-size: 100% 100%;
-    background-attachment: fixed;
-    min-height: calc(100vh - 90px);
-    /*box-shadow: 0 5px 10px rgba(209, 202, 202, 0.3);*/
-    padding: 2%;
-    /*background-color: #2e3b4e;*/
-    background: linear-gradient(to right, #3a72d3, #1e3c72); 
-  }
-  
-  
   .contenido {
-    margin: 2% 6% 0;
+    margin: 2% 9% 0;
     box-shadow: 0 0px 20px #F1C40F;
   }
   
   body {
-    background: linear-gradient(to right, #1e3c72, #3a72d3);
+    background: linear-gradient(to right, #07255f, #2058b8);
   }
   
   .header {
@@ -24,7 +13,7 @@
     display: flex;
     align-items: center;
     border-radius: 10px;
-    background: linear-gradient(to right, #1e3c72, #3a72d3);  
+    background: linear-gradient(to right, #07255f, #2058b8);  
   }
   
   .tituloLogo{
@@ -139,22 +128,20 @@
   }
   
   .stepper {
-    background: linear-gradient(to right, #1e3c72, #3a72d3);
+    background: linear-gradient(to right, #07255f, #2058b8);
     padding: 1rem;
     border-radius: 8px;
     color: #ffffff; /* Cambia el color del texto si es necesario */
-}
+  }
 
-.stepper-panel {
-    background: none; /* Asegúrate de que los paneles no tengan fondo blanco */
-}
+  .stepper-panel {
+      background: none; /* Asegúrate de que los paneles no tengan fondo blanco */
+  }
   
   .stepperLabel {
     color: #fff;
     font-weight: bold;
   }
-  
-
 
   .p-stepper {
     flex-basis: 50rem;

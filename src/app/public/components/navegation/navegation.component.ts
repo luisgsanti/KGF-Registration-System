@@ -1,14 +1,24 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { PrimeNgModule } from '../../../prime-ng/prime-ng.module';
 
 @Component({
   selector: 'app-navegation',
   standalone: true,
-  imports: [RouterModule, PrimeNgModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './navegation.component.html',
   styleUrl: './navegation.component.css'
 })
 export class NavegationComponent {
+
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
+  }
 
 }

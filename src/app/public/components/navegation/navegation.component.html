@@ -1,5 +1,58 @@
-    <nav class="nav-container">
-        <p-button routerLink="/home" label="Principal" icon="pi pi-check"></p-button>
-        <p-button routerLink="/inscription" label="Inscripción" icon="pi pi-check"></p-button>
-        <p-button routerLink="/admin/login" label="Administrar página" icon="pi pi-check"></p-button>
+<header class="backdrop-blur-xl fixed w-full z-20 top-0 left-0" style="background: rgba(3, 0, 20, .08); background: radial-gradient(62.87% 100% at 50% 100%, rgba(255, 255, 255, .12) 0%, rgba(255, 255, 255, 0) 100%);">
+    <nav class="container px-4 lg:max-w-[960px] flex flex-wrap items-center justify-between mx-auto py-2">
+        <a href="/" class="hover:scale-125 transition-all duration-150">
+            <img src="../assets/img/logo-horizontal.png" width="170px" height="70px" alt="Logo" class="logo">
+        </a>
+  
+        <div class="lg:order-2">     
+            <div class="flex">  
+                <ul class="hidden lg:flex lg:space-x-8 text-white mt-3">
+                    <li class="hover:scale-110 transition-all duration-300 flex">
+                    <a routerLink="/admin/login" aria-label="Visit my LinkedIn profile" class="flex items-center space-x-2 text-white no-underline">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                        </svg>
+                        <span class="text-lg text-white">Iniciar sesión</span>
+                    </a>
+                    </li>
+                </ul>
+                  
+                <button class="p-2 text-sm text-white rounded-lg lg:hidden" (click)="toggleMenu()">
+                    <svg *ngIf="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                    <svg *ngIf="isMenuOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+  
+        <div [ngClass]="{'hidden': !isMenuOpen, 'flex flex-col items-center justify-center': isMenuOpen}" class="bordeTransparente px-4 items-center justify-between w-full lg:flex lg:w-auto lg:order-1">
+            <ul class="flex flex-col gap-1 lg:p-0 font-medium mb-2 lg:flex-row lg:mt-0 lg:border-0">
+                <li class="hover:bg-white/10 rounded-full px-4 py-1 transition text-center mt-2 lg:mt-0"><a routerLink="/home" href="#top" (click)="closeMenu()" class="text-white text-lg no-underline"
+                    >Inicio</a></li>
+                <li class="hover:bg-white/10 rounded-full px-4 py-1 transition text-center mt-2 lg:mt-0"><a href="#experience" (click)="closeMenu()" class="text-white text-lg no-underline"
+                    >Experiencia</a></li>
+                <li class="hover:bg-white/10 rounded-full px-4 py-1 transition text-center mt-2 lg:mt-0"><a href="#proyectos" (click)="closeMenu()" class="text-white text-lg no-underline"
+                    >Proyectos</a></li>
+                <li class="hover:bg-white/10 rounded-full px-4 py-1 transition text-center mt-2 lg:mt-0"><a routerLink="/inscription" (click)="closeMenu()" class="text-white text-lg no-underline"
+                    >Inscripción</a></li>
+            </ul>
+            
+            <ul class="flex justify-center lg:hidden text-white">
+                <li class="hover:scale-110 transition-all duration-300 flex items-center space-x-2 mt-2">
+                    <a routerLink="/admin/login" aria-label="Visit my LinkedIn profile" class="flex items-center space-x-2 text-white no-underline">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                    </svg>
+                    <span class="text-lg text-white">Iniciar sesión</span>
+                    </a>
+                </li>         
+            </ul>
+        </div>
     </nav>
+</header>
+  
