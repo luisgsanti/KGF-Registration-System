@@ -12,14 +12,14 @@ header .textos-header{
     font-size: 3.75rem;
     color:#fff;
     font-weight: bold;
-    font-family: 'Cinzel Decorative', serif;
+    font-family: 'Cinzel', serif;
   }
   
   .textos-header h2{
     font-size: 1.875rem;
     color:#fff;
     font-weight: bold;
-    font-family: 'Cinzel Decorative', serif;
+    font-family: 'Cinzel', serif;
   }
   
   .wave{
@@ -68,12 +68,12 @@ header .textos-header{
   @media screen and (max-width:650px){ 
     .textos-header h1{
         font-size: 2.188rem;
-        font-family: 'Cinzel Decorative', serif;
+        font-family: 'Cinzel', serif;
     }
   
     .textos-header h2{
         font-size: 1.25rem;
-        font-family: 'Cinzel Decorative', serif;
+        font-family: 'Cinzel', serif;
     }
   }
   
