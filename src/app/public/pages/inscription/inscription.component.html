@@ -93,12 +93,12 @@
               <div class="col-md-6">
                 <label class="form-label label" style="text-align: center; width: 100%;">ADJUNTAR DOCUMENTO DE
                   IDENTIDAD</label>
-                <input class="form-control labelFile" type="file">
+                <input class="form-control" type="file" formControlName="routeDocIdentification" (change)="capturarArchivoPdf($event,0)" accept=".pdf">
               </div>
               <div class="col-md-6">
                 <label class="form-label label" style="text-align: center;width: 100%; ">ADJUNTAR CERTIFICACION
                   BANCARIA</label>
-                <input class="form-control labelFile" type="file">
+                <input class="form-control" type="file" formControlName="routeDocBankCertificate" (change)="capturarArchivoPdf($event,1)" accept=".pdf">
 
               </div>
             </div>
@@ -117,7 +117,7 @@
             </div>
             <br>
             <div class="ubicarFinal">
-              <button class="button flex gap-2 mt-4">
+              <button class="button flex gap-2 mt-4" mat-button matStepperNext>
                 Siguiente
                 <i class="fa-solid fa-forward" style="color: #ffff;"></i>
               </button>
@@ -142,22 +142,18 @@
               <div class="col-md-12">
                 <label class="form-label label" style="text-align: center;width: 100%; ">ADJUNTAR COMPROBANTE DE
                   DEUDA</label>
-                <input class="form-control labelFile" type="file">
+                <input class="form-control" type="file" formControlName="routeDocDebt" (change)="capturarArchivoPdf($event,2)" accept=".pdf">
               </div>
             </div>
             <br>
             <div class="button-container">
-              <button type="button" class="styleButton btnDone" mat-button matStepperPrevious>
-                <span>
-                  <i class="fa-solid fa-backward"></i>
-                </span>
-                ANTERIOR
+              <button class="button flex gap-2 mt-4" mat-button matStepperPrevious>
+                <i class="fa-solid fa-backward" style="color: #ffff;"></i>
+                Anterior
               </button>
-              <button type="button" class="styleButton btnDone" mat-button matStepperNext>
-                SIGUIENTE
-                <span>
-                  <i class="fa-solid fa-forward"></i>
-                </span>
+              <button class="button flex gap-2 mt-4" mat-button matStepperNext>
+                Siguiente
+                <i class="fa-solid fa-forward" style="color: #ffff;"></i>
               </button>
             </div>
 
@@ -178,35 +174,31 @@
               <div class="col-lg-4">
                 <label class="form-label label" style="text-align: center;width: 100%; ">ADJUNTAR COTIZACION
                   CASA</label>
-                <input class="form-control labelFile" type="file">
+                <input class="form-control" type="file" formControlName="routeDocHome" (change)="capturarArchivoPdf($event,3)" accept=".pdf">
 
               </div>
               <div class="col-lg-4">
                 <label class="form-label label" style="text-align: center;width: 100%; ">ADJUNTAR COTIZACION
                   MUEBLES</label>
-                <input class="form-control labelFile" type="file">
+                <input class="form-control" type="file" formControlName="routeDocFurniture" (change)="capturarArchivoPdf($event,4)" accept=".pdf">
 
               </div>
               <div class="col-lg-4">
                 <label class="form-label label" style="text-align: center;width: 100%; ">ADJUNTAR COTIZACION
                   VEHICULO</label>
-                <input class="form-control labelFile" type="file">
+                <input class="form-control" type="file" formControlName="routeDocVehicle" (change)="capturarArchivoPdf($event,5)" accept=".pdf">
 
               </div>
             </div>
             <br>
             <div class="button-container">
-              <button type="button" class="styleButton btnDone" mat-button matStepperPrevious>
-                <span>
-                  <i class="fa-solid fa-backward"></i>
-                </span>
-                ANTERIOR
+              <button class="button flex gap-2 mt-4" mat-button matStepperPrevious>
+                <i class="fa-solid fa-backward" style="color: #ffff;"></i>
+                Anterior
               </button>
-              <button type="button" class="styleButton btnDone" mat-button matStepperNext>
-                SIGUIENTE
-                <span>
-                  <i class="fa-solid fa-forward"></i>
-                </span>
+              <button class="button flex gap-2 mt-4" mat-button matStepperNext>
+                Siguiente
+                <i class="fa-solid fa-forward" style="color: #ffff;"></i>
               </button>
             </div>
           </mat-step>
@@ -226,22 +218,18 @@
               <div class="col-lg-12">
                 <label class="form-label label" style="text-align: center;width: 100%; ">ADJUNTAR PLAN DE
                   EMPRENDIMIENTO</label>
-                <input class="form-control labelFile" type="file">
+                <input class="form-control" formControlName="routeDocVenture" type="file" (change)="capturarArchivoPdf($event,6)" accept=".pdf">
               </div>
             </div>
             <br>
             <div class="button-container">
-              <button type="button" class="styleButton btnDone" mat-button matStepperPrevious>
-                <span>
-                  <i class="fa-solid fa-backward"></i>
-                </span>
-                ANTERIOR
+              <button class="button flex gap-2 mt-4" mat-button matStepperPrevious>
+                <i class="fa-solid fa-backward" style="color: #ffff;"></i>
+                Anterior
               </button>
-              <button type="button" class="styleButton btnDone" mat-button matStepperNext>
-                SIGUIENTE
-                <span>
-                  <i class="fa-solid fa-forward"></i>
-                </span>
+              <button class="button flex gap-2 mt-4" mat-button matStepperNext>
+                Siguiente
+                <i class="fa-solid fa-forward" style="color: #ffff;"></i>
               </button>
             </div>
           </mat-step>
@@ -274,8 +262,8 @@
             <br>
             <br>
             <div class="ubicarFinal">
-              <button type="button" class="styleButton btnDone" (click)="registrarEnrollment()">
-
+              <button class="button flex gap-2 mt-4" mat-button matStepperNext (click)="registrarEnrollment()">
+                <i class="fa-solid fa-floppy-disk" style="color: #ffff;"></i>
                 FINALIZAR REGISTRO
               </button>
             </div>

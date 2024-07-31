@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { MatStepperModule } from '@angular/material/stepper';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Enrollment } from '../../interfaces/enrollment.interface';
+import { DomSanitizer } from '@angular/platform-browser';
+import { InscriptionService } from '../../services/inscription.service';
 
 
 @Component({
@@ -16,8 +18,19 @@ import { Enrollment } from '../../interfaces/enrollment.interface';
   styleUrls: ['./inscription.component.css']
 })
 export class InscriptionComponent {
-  constructor(private _formBuilder: FormBuilder) {
 
+  
+  registerForm: FormGroup;
+
+  constructor(
+    private _formBuilder: FormBuilder,
+    private sanitizer: DomSanitizer,
+    private inscriptionService: InscriptionService,
+
+
+  ) {
+
+    
     this.registerForm = this._formBuilder.group({
       identificationNumber:['', Validators.required],
       name: ['', Validators.required],
@@ -52,7 +65,9 @@ export class InscriptionComponent {
   }
 
   isLinear = false;
+  prevTotal = 0;
 
+  
   construirEnrollment(): Enrollment{
 
     const enrollment: Enrollment = {
@@ -87,13 +102,113 @@ export class InscriptionComponent {
     return enrollment;
   }
 
-  registerForm: FormGroup;
+  /*filesPdf: File | null = null;*/
+  filesPdf: any = [];
+  documentosPdf: any = [];
 
-  registrarEnrollment(){
-    const enrollment = this.construirEnrollment();
+  registrarEnrollment() {
+    const formData = new FormData();
+    const formValues = this.registerForm.value;
 
-    console.log(enrollment);
+    for (const key in formValues) {
+      if (formValues.hasOwnProperty(key)) {
+        const value = formValues[key];
+        formData.append(key, value);
+      }
+    }
+
+    /*for (let i = 0; i < this.filesPdf.length; i++) {
+      formData.append(`RutaPdf${i + 1}`, this.filesPdf[i]);
+    }*/
+    formData.append("routeDocIdentification", this.filesPdf[0]);
+    formData.append("routeDocBankCertificate", this.filesPdf[1]);
+    formData.append("routeDocDebt", this.filesPdf[2]);
+    formData.append("routeDocHome", this.filesPdf[3]);
+    formData.append("routeDocFurniture", this.filesPdf[4]);
+    formData.append("routeDocVehicle", this.filesPdf[5]);
+    formData.append("routeDocVenture", this.filesPdf[6]);
+
+    formData.forEach((value, key) => {
+      if (value instanceof File) {
+        console.log()
+          console.log(`${key}:`);
+          console.log(`  File name: ${value.name}`);
+          console.log(`  File type: ${value.type}`);
+          console.log(`  File size: ${value.size} bytes`);
+      } else {
+          console.log(`${key}: ${value}`);
+      }
+    });
+
+    this.inscriptionService.registerEnrollment(formData)
+      .subscribe(() => {
+          console.error("Si la Guarda");
+        },(error) => {
+          console.error("Error al guardar:", error);
+      }
+    );
+
+    /*if (this.filesPdf) {
+      formData.append("routeDocIdentification", this.filesPdf); 
+    } else {
+      console.log('No file selected');
+    }
+
+    formData.forEach((value, key) => {
+      if (value instanceof File) {
+        console.log()
+          console.log(`${key}:`);
+          console.log(`  File name: ${value.name}`);
+          console.log(`  File type: ${value.type}`);
+          console.log(`  File size: ${value.size} bytes`);
+      } else {
+          console.log(`${key}: ${value}`);
+      }
+    });*/
   }
 
+  capturarArchivoPdf(event: any,  posicionArchivo: number) {
+    try {
+      const documentoCapturadoPdf = event.target.files[0];
+      const maxFileSize = 5200000;
+      const extensionesValidas = ['pdf'];
+      const extension = documentoCapturadoPdf.name.split('.').pop()?.toLowerCase();
 
+      if (extension && extensionesValidas.includes(extension) && documentoCapturadoPdf.size <= maxFileSize) {
+        this.filesPdf[posicionArchivo] = documentoCapturadoPdf;
+        this.extraerBase64(documentoCapturadoPdf).then((res: any) => {
+          this.documentosPdf[posicionArchivo] = res.base;
+        });
+      }else{
+        console.log("error");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
+    try {
+      const reader = new FileReader();
+      reader.readAsDataURL($event);
+      reader.onload = () => {
+        resolve({
+          base: reader.result
+        });
+      };
+      reader.onerror = error => {
+        resolve({
+          base: null
+        });
+      };
+    } catch (e) {
+      resolve({
+        base: null
+      });
+    }
+  });
 }
+
+
+
+
