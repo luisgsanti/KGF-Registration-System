@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { Enrollment } from '../../interfaces/enrollment.interface';
 import { DomSanitizer } from '@angular/platform-browser';
 import { InscriptionService } from '../../services/inscription.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { InscriptionService } from '../../services/inscription.service';
     MatStepperModule,
     FormsModule,
     ReactiveFormsModule, 
+    HttpClientModule,
   ],
   templateUrl: './inscription.component.html',
   styleUrls: ['./inscription.component.css']
@@ -25,7 +27,7 @@ export class InscriptionComponent {
   constructor(
     private _formBuilder: FormBuilder,
     private sanitizer: DomSanitizer,
-    private inscriptionService: InscriptionService,
+    //private inscriptionService: InscriptionService,
 
 
   ) {
@@ -117,9 +119,6 @@ export class InscriptionComponent {
       }
     }
 
-    /*for (let i = 0; i < this.filesPdf.length; i++) {
-      formData.append(`RutaPdf${i + 1}`, this.filesPdf[i]);
-    }*/
     formData.append("routeDocIdentification", this.filesPdf[0]);
     formData.append("routeDocBankCertificate", this.filesPdf[1]);
     formData.append("routeDocDebt", this.filesPdf[2]);
@@ -140,31 +139,15 @@ export class InscriptionComponent {
       }
     });
 
-    this.inscriptionService.registerEnrollment(formData)
+    /*this.inscriptionService.registerEnrollment(formData)
       .subscribe(() => {
           console.error("Si la Guarda");
         },(error) => {
           console.error("Error al guardar:", error);
       }
-    );
+    );*/
 
-    /*if (this.filesPdf) {
-      formData.append("routeDocIdentification", this.filesPdf); 
-    } else {
-      console.log('No file selected');
-    }
 
-    formData.forEach((value, key) => {
-      if (value instanceof File) {
-        console.log()
-          console.log(`${key}:`);
-          console.log(`  File name: ${value.name}`);
-          console.log(`  File type: ${value.type}`);
-          console.log(`  File size: ${value.size} bytes`);
-      } else {
-          console.log(`${key}: ${value}`);
-      }
-    });*/
   }
 
   capturarArchivoPdf(event: any,  posicionArchivo: number) {

@@ -15,7 +15,7 @@ export class InscriptionService {
   }
 
   getEnrollment(): Observable<Enrollment[]> {
-    return this.http.get<Enrollment[]>(`${this.myAppUrl}`)
+    return this.http.get<Enrollment[]>(`${this.myAppUrl}`);
   }
 
   getEnrollmentById(id: number): Observable<Enrollment> {
