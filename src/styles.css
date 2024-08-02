@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
 
+@import 'ngx-toastr/toastr';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,3 +25,8 @@ html::-webkit-scrollbar-thumb {
     border-radius: 10px; 
 }
 
+/* You can add global styles to this file, and also import other style files */
+.modo_oscuro-govco {
+    color: white;
+    filter: invert(1);
+  }

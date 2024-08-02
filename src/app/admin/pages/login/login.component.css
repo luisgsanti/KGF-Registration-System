@@ -9,7 +9,7 @@
     max-width: 350px;
     min-height: 550px;
     margin: 80px auto;
-    padding: 40px 30px 30px 30px;
+    padding: 20px 30px 40px 30px;
     box-shadow: 0 0px 20px #F1C40F;
     background: linear-gradient(to right, #031f57, #0747b6);
 }
@@ -23,7 +23,7 @@
 
 @media(max-width: 380px) {
     .wrapper {
-        margin: 30px 20px;
-        padding: 40px 15px 15px 15px
+        margin: 60px 12px;
+        padding: 20px 15px 40px 15px
     }
 }

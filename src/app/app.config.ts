@@ -4,6 +4,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideHttpClient } from '@angular/common/http';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideToastr } from 'ngx-toastr';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AddTokenInterceptor } from './admin/guards/add-token.interceptor';
 
 import { routes } from './app.routes';
 
@@ -13,6 +15,7 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     provideHttpClient(),
     provideAnimations(),
-    provideToastr({positionClass: 'toast-bottom-right'}),
+    provideToastr({timeOut: 5000, positionClass: 'toast-bottom-right'}),
+    { provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true }
   ]
 };

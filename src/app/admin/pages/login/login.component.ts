@@ -50,6 +50,7 @@ export class LoginComponent {
     this._userService.login(user).subscribe({
       next: (token) => {
         localStorage.setItem('token', token);
+        this.toastr.success('Iniciaste sesión correctamente', 'Bienvenido!' );
         this.router.navigate(['/admin/dashboard'])
       },
       error: (e: HttpErrorResponse) => {
