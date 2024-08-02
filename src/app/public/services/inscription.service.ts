@@ -11,7 +11,7 @@ export class InscriptionService {
   private myAppUrl: string;
 
   constructor(private http: HttpClient) {
-    this.myAppUrl = `${environment.endpoint}api/enrollment`;
+    this.myAppUrl = `${environment.endpoint}api/enrollments`;
   }
 
   getEnrollment(): Observable<Enrollment[]> {

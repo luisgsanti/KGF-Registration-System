@@ -21,15 +21,11 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class InscriptionComponent {
 
-  
   registerForm: FormGroup;
 
   constructor(
     private _formBuilder: FormBuilder,
-    private sanitizer: DomSanitizer,
     private inscriptionService: InscriptionService,
-
-
   ) {
 
     
@@ -139,13 +135,13 @@ export class InscriptionComponent {
       }
     });
 
-    /*this.inscriptionService.registerEnrollment(formData)
+    this.inscriptionService.registerEnrollment(formData)
       .subscribe(() => {
-          console.error("Si la Guarda");
+          console.log("Si la Guarda");
         },(error) => {
           console.error("Error al guardar:", error);
       }
-    );*/
+    );
 
 
   }

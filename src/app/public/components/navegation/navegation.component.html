@@ -1,6 +1,6 @@
 <header class="backdrop-blur-xl fixed w-full z-20 top-0 left-0" style="background: rgba(3, 0, 20, .08); background: radial-gradient(62.87% 100% at 50% 100%, rgba(255, 255, 255, .12) 0%, rgba(255, 255, 255, 0) 100%);">
     <nav class="container px-4 lg:max-w-[960px] flex flex-wrap items-center justify-between mx-auto py-2">
-        <a href="/" class="hover:scale-125 transition-all duration-150">
+        <a routerLink="/home" class="hover:scale-125 transition-all duration-150">
             <img src="../assets/img/logo-horizontal.png" width="170px" height="70px" alt="Logo" class="logo">
         </a>
   
@@ -31,11 +31,11 @@
   
         <div [ngClass]="{'hidden': !isMenuOpen, 'flex flex-col items-center justify-center': isMenuOpen}" class="bordeTransparente px-4 items-center justify-between w-full lg:flex lg:w-auto lg:order-1">
             <ul class="flex flex-col gap-1 lg:p-0 font-medium mb-2 lg:flex-row lg:mt-0 lg:border-0">
-                <li class="hover:bg-white/10 rounded-full px-4 py-1 transition text-center mt-2 lg:mt-0"><a routerLink="/home" href="#top" (click)="closeMenu()" class="text-white text-lg no-underline"
+                <li class="hover:bg-white/10 rounded-full px-4 py-1 transition text-center mt-2 lg:mt-0"><a href="home#top" (click)="closeMenu()" class="text-white text-lg no-underline"
                     >Inicio</a></li>
-                <li class="hover:bg-white/10 rounded-full px-4 py-1 transition text-center mt-2 lg:mt-0"><a routerLink="#experience" (click)="closeMenu()" class="text-white text-lg no-underline"
+                <li class="hover:bg-white/10 rounded-full px-4 py-1 transition text-center mt-2 lg:mt-0"><a href="home#experience" (click)="closeMenu()" class="text-white text-lg no-underline"
                     >Experiencia</a></li>
-                <li class="hover:bg-white/10 rounded-full px-4 py-1 transition text-center mt-2 lg:mt-0"><a routerLink="/inscription" (click)="closeMenu()" class="text-white text-lg no-underline"
+                <li class="hover:bg-white/10 rounded-full px-4 py-1 transition text-center mt-2 lg:mt-0"><a href="home#proyectos" (click)="closeMenu()" class="text-white text-lg no-underline"
                     >Proyectos</a></li>
                 <li class="hover:bg-white/10 rounded-full px-4 py-1 transition text-center mt-2 lg:mt-0"><a routerLink="/price-code" (click)="closeMenu()" class="text-white text-lg no-underline"
                     >Inscripción</a></li>
