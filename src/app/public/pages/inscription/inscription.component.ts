@@ -27,7 +27,7 @@ export class InscriptionComponent {
   constructor(
     private _formBuilder: FormBuilder,
     private sanitizer: DomSanitizer,
-    //private inscriptionService: InscriptionService,
+    private inscriptionService: InscriptionService,
 
 
   ) {
