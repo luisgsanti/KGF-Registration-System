@@ -1,0 +1,159 @@
+.mat-sidenav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 250px;
+    background: linear-gradient(to right, #101042, #00318d); 
+    z-index: 99;
+  }
+  
+  .cabecera, .nav-list li, .user-name, .user-role{
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .nav-list li{
+    color: #fff;
+    margin-bottom: 5px;
+    background: linear-gradient(to right, #00318d, #101042); 
+    border-radius: 10px;
+    width: 90%;
+    height: auto;
+    padding: 13px;
+    cursor: pointer;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+  
+  
+  .nav-list {
+    margin-top: 10px;
+  }
+  
+  .mat-toolbar {
+    background: linear-gradient(to right, #101042, #00318d); 
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+  }
+  
+  .nav-list li .iconoList {
+    margin-right: 10px;
+    color: #fff;
+  }
+  
+  .open span {
+    color: #fff;
+    size: 40px;
+  }
+  
+  .close span {
+    color: #fff;  
+  }
+  
+  .divider {
+    border-left: 1px solid #ccc;
+    margin: 0 10px;
+  }
+  
+  .navbarText {
+    Font-family: 'Segoe Script';
+    font-size: 2vw;
+    color: #28B463;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navbarText {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .navbarText {
+      font-size: 1.5rem;
+    }
+  }
+  
+  .ubicarFinal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+  }
+  
+  .fa-bars{
+    font-size: 25px;
+  }
+  
+  .CabeceraContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+  }
+  
+  .cabecera{
+    font-size: 25px;
+    color: #fff;
+    Font-family: 'Segoe Script';
+    font-weight: bold;
+  }
+  
+  .cabecera button{
+    cursor:unset;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+  }
+  
+  .itemsHistorico{
+    margin-top: 10px;
+  }
+  
+  .bottom-option {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  
+  }
+  
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    background-color: #1d1b31;
+    /* background-color: #1E8449; */
+    padding: 0 20px;
+  }
+  
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    font-size: 14px;
+  }
+  
+  .user-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff;
+  }
+  
+  .user-role {
+    color: #fff;
+  }
+  
+  .logout-icon {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  

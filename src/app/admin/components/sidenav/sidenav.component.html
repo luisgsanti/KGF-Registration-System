@@ -1,0 +1,55 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <div class="CabeceraContainer">
+          <div class="cabecera">
+            <i class="fa-solid fa-layer-group"></i>
+            <button>Menú</button>
+          </div>
+          <button class="buttonToggle open" (click)="sidenav.toggle()">
+            <span><i class="fa-solid fa-bars"></i></span>
+          </button>
+        </div>
+        <div class="nav-list">
+            
+          <li (click)="sidenav.toggle()">
+            <a routerLinkActive="active"  href="admin/dashboard"  style="text-decoration: none; color: #fff;">
+              <i class="fas fa-home iconoList"></i>
+              Dashboard
+            </a>
+          </li>
+          <li (click)="sidenav.toggle()">
+            <a routerLinkActive="active" href="admin/manageEnrollments" style="text-decoration: none; color: #fff;">
+              <i class="fa-solid fa-file-circle-plus iconoList"></i>
+              Inscripciones
+            </a>
+          </li>
+  
+        </div>
+      </mat-nav-list>
+      <div class="bottom-option">
+        <div class="footer">
+          <div class="user-info">
+            <div class="user-name">hola</div>
+            <div class="user-role">pepe</div>
+          </div>
+          <div class="logout-icon" title="Cerrar Sesión">
+            <mat-icon>exit_to_app</mat-icon>
+          </div>
+        </div>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar>
+        <button class="buttonToggle close" (click)="sidenav.toggle()">
+          <span><i class="fa-solid fa-bars"></i></span>
+        </button>
+        <div class="ubicarFinal">
+            <a routerLink="/home" class="hover:scale-110 transition-all duration-150">
+                <img src="../assets/img/logo-horizontal.png" width="170px" height="70px" alt="Logo" class="logo">
+            </a>
+        </div>
+      </mat-toolbar>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
