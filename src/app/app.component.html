@@ -1,2 +1,13 @@
-
+<div class="barra-accesibilidad-govco" [ngClass]="{'active-barra-accesibilidad-govco': isAccessibilityActive}">
+    <button class="icon-contraste" (click)="cambiarContexto()">
+      <span id="titlecontraste">Contraste</span>
+    </button>
+    <button class="icon-reducir" (click)="disminuirTamanio()">
+      <span id="titledisminuir">Reducir letra</span>
+    </button>
+    <button class="icon-aumentar" (click)="aumentarTamanio()">
+      <span id="titleaumentar">Aumentar letra</span>
+    </button>
+  </div>
+  
 <router-outlet></router-outlet>

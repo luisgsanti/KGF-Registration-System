@@ -12,22 +12,22 @@
         </div>
         <div class="nav-list">
             
-          <li (click)="sidenav.toggle()">
-            <a routerLinkActive="active"  href="admin/dashboard"  style="text-decoration: none; color: #fff;">
+          <li (click)="sidenav.toggle()" routerLinkActive="active" routerLink="/admin/dashboard">
+            <a style="text-decoration: none; color: #fff;">
               <i class="fas fa-home iconoList"></i>
               Dashboard
             </a>
           </li>
-          <li (click)="sidenav.toggle()">
-            <a routerLinkActive="active" href="admin/manageEnrollments" style="text-decoration: none; color: #fff;">
+          <li (click)="sidenav.toggle()" routerLinkActive="active" routerLink="/admin/manageEnrollments">
+            <a style="text-decoration: none; color: #fff;">
               <i class="fa-solid fa-file-circle-plus iconoList"></i>
               Inscripciones
             </a>
           </li>
-          <li (click)="sidenav.toggle()">
-            <a routerLinkActive="active"  href="admin/update-password"  style="text-decoration: none; color: #fff;">
+          <li (click)="sidenav.toggle()" routerLinkActive="active"  routerLink="/admin/update-password">
+            <a style="text-decoration: none; color: #fff;">
               <i class="fa-solid fa-key iconoList "></i>
-              Actualizar Clave
+              Actualizar Contraseña
             </a>
           </li>
   
@@ -35,7 +35,7 @@
       </mat-nav-list>
       <div class="bottom-option">
         <div class="footer">
-          <button class="w-full rounded p-2 text-white text-lg font-semibold" style="    background: linear-gradient(to top, #101042, #00318d);">
+          <button class="w-full rounded p-2 text-white text-lg font-semibold" (click)="logOut()" style="background: linear-gradient(to top, #101042, #00318d);">
             <span>
               <i class="fa-solid fa-right-from-bracket pe-2"></i>
             </span>  

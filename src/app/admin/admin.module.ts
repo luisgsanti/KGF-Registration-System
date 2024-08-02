@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { ToastrModule } from 'ngx-toastr';
 
 import { AdminRoutingModule } from './admin-routing.module';
-import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
+    ToastrModule.forRoot(),
     AdminRoutingModule,
-    LoginComponent,
   ]
 })
 export class AdminModule { }

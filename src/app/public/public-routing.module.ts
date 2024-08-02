@@ -15,7 +15,6 @@ const routes: Routes = [
         { path: 'home', component: HomeComponent },
         { path: 'inscription', component: InscriptionComponent },
         { path: 'price-code', component: PriceCodeComponent },
-
       ]
   }
 ];

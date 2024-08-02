@@ -1,3 +1,37 @@
-<p>login works!</p>
-<p>Usuario:</p>
-<p>Contraseña:</p>
+<div class="wrapper rounded-2xl">
+    <div *ngIf="!loading">
+        <div class="flex flex-col items-center justify-center">
+            <img src="assets/img/logo-reducido.png" routerLink="/home" width="200" height="200" class="cursor-pointer">
+            <div class="mb-3 name text-center text-white"> Inicio de Sesión </div>
+        </div>
+        
+        <div class="row g-3">
+            <div class="form-group col pb-2">
+                <label for="newPassword" class="form-label fw-medium ps-1 pb-1 text-white">Usuario:</label>
+                <input type="text" [(ngModel)]="username" autocomplete="false" class="form-control p-2" placeholder="Ingrese usuario">
+            </div>
+        </div>
+        <div class="row g-3">
+            <div class="form-group col pb-4">
+                <label for="newPassword" class="form-label fw-medium ps-1 pb-1 text-white">Contraseña:</label>
+                <div class="input-group">
+                    <input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="password" autocomplete="false" class="form-control p-2" placeholder="Ingrese Contraseña">
+                    <button class="btn btn-outline-secondary text-white" type="button" (click)="togglePassword()">
+                        <i class="fa" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="d-grid gap-2 mx-auto">
+            <button type="button" class="btn btnModificado btn-primary btn-lg py-2" (click)="login()">Aceptar</button>
+        </div>
+
+        <div class="text-center">
+            <label class="form-label fw-medium text-white pt-3 underline cursor-pointer" routerLink="/home"><i class="fa-solid fa-house pe-2"></i>Volver al inicio</label>
+        </div>
+    </div>
+    <app-spinner *ngIf="loading"></app-spinner>
+</div>
+  
+  
