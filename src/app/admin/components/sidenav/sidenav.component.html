@@ -24,18 +24,23 @@
               Inscripciones
             </a>
           </li>
+          <li (click)="sidenav.toggle()">
+            <a routerLinkActive="active"  href="admin/update-password"  style="text-decoration: none; color: #fff;">
+              <i class="fa-solid fa-key iconoList "></i>
+              Actualizar Clave
+            </a>
+          </li>
   
         </div>
       </mat-nav-list>
       <div class="bottom-option">
         <div class="footer">
-          <div class="user-info">
-            <div class="user-name">hola</div>
-            <div class="user-role">pepe</div>
-          </div>
-          <div class="logout-icon" title="Cerrar Sesión">
-            <mat-icon>exit_to_app</mat-icon>
-          </div>
+          <button class="w-full rounded p-2 text-white text-lg font-semibold" style="    background: linear-gradient(to top, #101042, #00318d);">
+            <span>
+              <i class="fa-solid fa-right-from-bracket pe-2"></i>
+            </span>  
+            Cerrar Sesión
+          </button>
         </div>
       </div>
     </mat-sidenav>

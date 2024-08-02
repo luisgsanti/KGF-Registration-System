@@ -32,7 +32,11 @@
   }
   
   .mat-toolbar {
-    background: linear-gradient(to right, #101042, #00318d); 
+    background: #131350; 
+    /*background: linear-gradient(to right, #101042, #00318d); */
+    background: linear-gradient(to top, #101042, #00318d); 
+
+
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     padding: 40px;
   }
@@ -154,6 +158,10 @@
     font-size: 24px;
     color: #fff;
     cursor: pointer;
+  }
+
+  .logout{
+    border: 2px;
   }
   
   
