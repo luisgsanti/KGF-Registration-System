@@ -15,7 +15,7 @@
             <div class="form-group col pb-4">
                 <label for="newPassword" class="form-label fw-medium ps-1 pb-1 text-white">Contraseña:</label>
                 <div class="input-group">
-                    <input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="password" autocomplete="false" class="form-control p-2" placeholder="Ingrese Contraseña">
+                    <input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="password" autocomplete="false" class="form-control p-2" placeholder="Ingrese contraseña">
                     <button class="btn btn-outline-secondary text-white" type="button" (click)="togglePassword()">
                         <i class="fa" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
                     </button>
@@ -33,5 +33,5 @@
     </div>
     <app-spinner *ngIf="loading"></app-spinner>
 </div>
-  
-  
+
+
