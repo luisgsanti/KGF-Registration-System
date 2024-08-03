@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatStepperModule } from '@angular/material/stepper';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Enrollment } from '../../interfaces/enrollment.interface';
@@ -58,47 +58,14 @@ export class InscriptionComponent {
       totalVenture: ['', Validators.required],
       routeDocVenture: ['', Validators.required],
 
+      totalGlobal: [''],
+      totalGlobalUDS: [''],
     });
-
+    this.actualizarTotales();
   }
 
   isLinear = false;
   prevTotal = 0;
-
-  
-  construirEnrollment(): Enrollment{
-
-    const enrollment: Enrollment = {
-      identificationNumber: this.registerForm.get('identificationNumber')?.value.toUpperCase(),
-      name: this.registerForm.get('name')?.value.toUpperCase(),
-      email: this.registerForm.get('email')?.value.toUpperCase(),
-      phone: this.registerForm.get('phone')?.value.toUpperCase(),
-      address: this.registerForm.get('address')?.value.toUpperCase(),
-      country: this.registerForm.get('country')?.value.toUpperCase(),
-      department: this.registerForm.get('department')?.value.toUpperCase(),
-      city: this.registerForm.get('city')?.value.toUpperCase(),
-      municipality: this.registerForm.get('municipality')?.value.toUpperCase(),
-      bankAccount: this.registerForm.get('bankAccount')?.value.toUpperCase(),
-      accountType: this.registerForm.get('accountType')?.value.toUpperCase(),
-      bondType: this.registerForm.get('bondType')?.value.toUpperCase(),
-      bondCode: this.registerForm.get('bondCode')?.value.toUpperCase(),
-
-      routeDocIdentification: this.registerForm.get('routeDocIdentification')?.value.toUpperCase(),
-      routeDocBankCertificate: this.registerForm.get('routeDocBankCertificate')?.value.toUpperCase(),
-
-      totalDebt: this.registerForm.get('totalDebt')?.value.toUpperCase(),
-      routeDocDebt: this.registerForm.get('routeDocDebt')?.value.toUpperCase(),
-
-      totalUpcomingAssets: this.registerForm.get('totalUpcomingAssets')?.value.toUpperCase(),
-      routeDocHome: this.registerForm.get('routeDocHome')?.value.toUpperCase(),
-      routeDocFurniture: this.registerForm.get('routeDocFurniture')?.value.toUpperCase(),
-      routeDocVehicle: this.registerForm.get('routeDocVehicle')?.value.toUpperCase(),
-
-      totalVenture: this.registerForm.get('totalVenture')?.value.toUpperCase(),
-      routeDocVenture: this.registerForm.get('routeDocVenture')?.value.toUpperCase(),
-    }
-    return enrollment;
-  }
 
   /*filesPdf: File | null = null;*/
   filesPdf: any = [];
@@ -106,6 +73,9 @@ export class InscriptionComponent {
 
   registrarEnrollment() {
     const formData = new FormData();
+
+    this.actualizarTotales();
+
     const formValues = this.registerForm.value;
 
     for (const key in formValues) {
@@ -123,7 +93,7 @@ export class InscriptionComponent {
     formData.append("routeDocVehicle", this.filesPdf[5]);
     formData.append("routeDocVenture", this.filesPdf[6]);
 
-    formData.forEach((value, key) => {
+    /*formData.forEach((value, key) => {
       if (value instanceof File) {
         console.log()
           console.log(`${key}:`);
@@ -133,8 +103,13 @@ export class InscriptionComponent {
       } else {
           console.log(`${key}: ${value}`);
       }
-    });
+    });*/
+    console.log("vamo a ve");
 
+    formData.forEach((value, key) => {
+      console.log(`${key}: ${value}`);
+    });
+    
     this.inscriptionService.registerEnrollment(formData)
       .subscribe(() => {
           console.log("Si la Guarda");
@@ -145,6 +120,36 @@ export class InscriptionComponent {
 
 
   }
+
+  calcularTotalGlobal(){
+
+    const totalDebt = +this.registerForm.get('totalDebt')?.value || 0;
+    const totalUpcomingAssets = +this.registerForm.get('totalUpcomingAssets')?.value || 0;
+    const totalVenture = +this.registerForm.get('totalVenture')?.value || 0;
+
+    return totalDebt + totalUpcomingAssets + totalVenture;
+
+  }
+
+  convertToUSD(){
+    const totalGlobal = this.calcularTotalGlobal();
+    const exchangeRate = 1; // Asigna el tipo de cambio actual
+    return totalGlobal / exchangeRate;
+  }
+
+
+actualizarTotales(): void {
+  const totalGlobal = this.calcularTotalGlobal();
+  const totalGlobalUSD = this.convertToUSD();
+
+  console.log(totalGlobal)
+  console.log(totalGlobalUSD)
+
+  this.registerForm.patchValue({
+    totalGlobal: totalGlobal,
+    totalGlobalUDS: totalGlobalUSD
+  });
+}
 
   capturarArchivoPdf(event: any,  posicionArchivo: number) {
     try {

@@ -32,5 +32,10 @@ export interface Enrollment{
     /********************************************/
 
     totalVenture:       string;
-    routeDocVenture:    string
+    routeDocVenture:    string;
+
+    /********************************************/
+
+    totalGlobal:        string;
+    totalGlobalUDS:     string;
 }
