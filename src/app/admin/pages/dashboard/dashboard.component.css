@@ -1,0 +1,52 @@
+.title{
+    color: #fff;
+}
+.contenido {
+    font-family: 'Cinzel', serif;
+    padding: 20px;
+}
+
+.dashboard {
+    margin: auto;
+    text-align: center;
+}
+
+.estadisticas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.tarjeta {
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(25% - 10px);
+    /*box-shadow: 0 4px 8px #fff;*/
+    box-shadow: 0 0px 10px #F1C40F;
+
+    text-align: center;
+    background-color: #fff;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.tarjeta.correcta { background-color: #8cfc8c; }
+.tarjeta.revisar { background-color: #ffcccc; }
+.tarjeta.corregir { background-color: #ffcc99; }
+.tarjeta.correcciones { background-color: #ccccff; }
+.tarjeta.avaladas { background-color: #cceeff; }
+
+
+
+@media (max-width: 800px) {
+    .tarjeta {
+        width: 40%;
+    }
+}
+
+@media (max-width: 480px) {
+    .tarjeta {
+        width: 100%;
+    }
+}
