@@ -7,6 +7,7 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { Router } from '@angular/router';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatTable } from '@angular/material/table';
+import { CurrencyPipe } from '@angular/common';
 
 
 @Component({
@@ -16,7 +17,8 @@ import { MatTable } from '@angular/material/table';
     MatPaginator,
     MatTable,
     MatSort,
-    MatTableModule
+    MatTableModule,
+    CurrencyPipe 
   ],
   templateUrl: './manage-enrollments.component.html',
   styleUrl: './manage-enrollments.component.css'

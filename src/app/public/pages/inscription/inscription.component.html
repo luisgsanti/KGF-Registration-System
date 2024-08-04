@@ -7,15 +7,15 @@
         <div class="text-container">
           <h1 class="tituloLogo">KINGDOM GRACE FOUNDATION</h1>
           <br>
-          <p class=" text-base lg:text-lg ">PARTICIPACIÓN HUMANITARIA 2024-2026</p>
-          <p class=" text-base lg:text-lg ">PUERTO RICO - ECUADOR - COLOMBIA - VENEZUELA - HONDURAS</p>
-          <p class=" text-base lg:text-lg ">BIENVENIDO AL JUBILEO DE YESHUA NUESTRO REDENTOR</p>
+          <p class=" text-sm lg:text-base ">PARTICIPACIÓN HUMANITARIA 2024-2026</p>
+          <p class=" text-sm lg:text-base ">PUERTO RICO - ECUADOR - COLOMBIA - VENEZUELA - HONDURAS</p>
+          <p class=" text-sm lg:text-base ">BIENVENIDO AL JUBILEO DE YESHUA NUESTRO REDENTOR</p>
         </div>
         <img src="../assets/img/logo.png" alt="Logo" class="logo hidden lg:flex">
       </div>
       <hr>
       <div class="col ubicarCentro">
-        <h1 class="titulo">FORMULARIO DE INSCRIPCION</h1>
+        <h2 class="titulo">FORMULARIO DE INSCRIPCIÓN</h2>
       </div>
       <hr>
       <form [formGroup]="registerForm">
@@ -24,7 +24,7 @@
 
             <ng-template matStepLabel><span class="stepperLabel">DATOS PERSONALES</span></ng-template>
             <div class="row g-2">
-              <label class="col-lg-2 col-form-label label">NOMBRE BENEFICIARIO:</label>
+              <label class="col-lg-2 col-form-label label">NOMBRE:</label>
               <div class="col-sm">
                 <input type="text" class="form-control" formControlName="name" placeholder="Ingrese el nombre del beneficiario">
               </div>
@@ -41,7 +41,7 @@
               </div>
               <label class="col-lg-2 col-form-label label">CELULAR:</label>
               <div class="col-sm">
-                <input type="text" class="form-control" formControlName="phone" placeholder="Ingrese el celular">
+                <input type="number" class="form-control" formControlName="phone" placeholder="Ingrese el celular">
               </div>
             </div>
             <br>
@@ -83,7 +83,7 @@
               </div>
               <label class="col-lg-2 col-form-label label">TIPO CUENTA:</label>
               <div class="col-sm">
-                <input type="text" class="form-control" formControlName="accountType" placeholder="Ingrse el tipo de cuenta">
+                <input type="text" class="form-control" formControlName="accountType" placeholder="Ingrese el tipo de cuenta">
               </div>
             </div>
             <br>
@@ -164,7 +164,7 @@
             <div class="row g-2">
               <label class="col-lg-3 col-form-label label">VALOR TOTAL DE LA COTIZACION:</label>
               <div class="col-lg-4">
-                <input type="text" class="form-control" formControlName="totalUpcomingAssets" placeholder="Ingrese el valor total de la cotización">
+                <input type="number" class="form-control" formControlName="totalUpcomingAssets" placeholder="Ingrese el valor total de la cotización">
               </div>
             </div>
             <br>
@@ -208,7 +208,7 @@
             <div class="row g-2">
               <label class="col-lg-3 col-form-label label">VALOR TOTAL DE LA COTIZACION:</label>
               <div class="col-lg-4">
-                <input type="text" class="form-control" formControlName="totalVenture" placeholder="Ingrese el valor total de la cotización">
+                <input type="number" class="form-control" formControlName="totalVenture" placeholder="Ingrese el valor total de la cotización">
               </div>
             </div>
             <br>
@@ -240,24 +240,24 @@
             <br>
             <div class="row g-2">
               <label class="col-lg-4 col-form-label label total">CANCELACION DE DEUDAS. JUBILEO:</label>
-              <label class="col-lg-4 col-form-label label">$ 0.000</label>
+              <label class="col-lg-4 col-form-label label">{{ registerForm.get('totalDebt')?.value | currency:'USD':'symbol':'1.2-2' }}</label>
             </div>
             <div class="row g-2">
               <label class="col-lg-4 col-form-label label total">CASA AMUEBLADA, AUTO, VEHICULO:</label>
-              <label class="col-lg-4 col-form-label label">$ 0.000</label>
+              <label class="col-lg-4 col-form-label label">{{ registerForm.get('totalUpcomingAssets')?.value | currency:'USD':'symbol':'1.2-2' }}</label>
             </div>
             <div class="row g-2">
               <label class="col-lg-4 col-form-label label total">EMPRENDIMIENTO:</label>
-              <label class="col-lg-4 col-form-label label">$ 0.000</label>
+              <label class="col-lg-4 col-form-label label">{{ registerForm.get('totalVenture')?.value | currency:'USD':'symbol':'1.2-2' }}</label>
             </div>
             <hr>
             <div class="row g-2">
               <label class="col-lg-4 col-form-label label total">TOTAL:</label>
-              <label class="col-lg-4 col-form-label label">$ 0.000</label>
+              <label class="col-lg-4 col-form-label label">{{ registerForm.get('totalGlobal')?.value | currency:'USD':'symbol':'1.2-2' }}</label>
             </div>
             <div class="row g-2">
               <label class="col-lg-4 col-form-label label total">TOTAL EN USD:</label>
-              <label class="col-lg-4 col-form-label label">$ 0.000</label>
+              <label class="col-lg-4 col-form-label label">{{ registerForm.get('totalGlobalUDS')?.value | currency:'USD':'symbol':'1.2-2' }}</label>
             </div>
             <br>
             <br>

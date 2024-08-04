@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 
 //pages
 import { HomeComponent } from './pages/home/home.component';
@@ -15,6 +15,7 @@ import { PublicRoutingModule } from './public-routing.module';
     PublicRoutingModule,
     HomeComponent,
     InscriptionComponent,
+    CurrencyPipe 
   ]
 })
 export class PublicModule { }

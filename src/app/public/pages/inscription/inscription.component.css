@@ -75,8 +75,11 @@
   .label {
     text-align: center;
     font-weight: bold;
-    font-size: small;
     color: #fff;
+  }
+
+  .label, input, button{
+    font-family: "Poppins", sans-serif;
   }
 
   

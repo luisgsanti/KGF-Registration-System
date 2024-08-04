@@ -5,6 +5,7 @@ import { Enrollment } from '../../interfaces/enrollment.interface';
 import { DomSanitizer } from '@angular/platform-browser';
 import { InscriptionService } from '../../services/inscription.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CurrencyPipe } from '@angular/common';
 
 
 @Component({
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule, 
     HttpClientModule,
+    CurrencyPipe
   ],
   templateUrl: './inscription.component.html',
   styleUrls: ['./inscription.component.css']
@@ -47,21 +49,27 @@ export class InscriptionComponent {
       routeDocIdentification: ['', Validators.required],
       routeDocBankCertificate: ['', Validators.required],
 
-      totalDebt: ['', Validators.required],
+      totalDebt: ['0', Validators.required],
       routeDocDebt: ['', Validators.required],
 
-      totalUpcomingAssets: ['', Validators.required],
+      totalUpcomingAssets: ['0', Validators.required],
       routeDocHome: ['', Validators.required],
       routeDocFurniture: ['', Validators.required],
       routeDocVehicle: ['', Validators.required],
 
-      totalVenture: ['', Validators.required],
+      totalVenture: ['0', Validators.required],
       routeDocVenture: ['', Validators.required],
 
-      totalGlobal: [''],
-      totalGlobalUDS: [''],
+      totalGlobal: ['0'],
+      totalGlobalUDS: ['0'],
     });
-    this.actualizarTotales();
+    this.registerForm.valueChanges.subscribe(values => {
+      this.actualizarTotales();
+    });
+
+    /*this.registerForm.get('totalDebt')?.valueChanges.subscribe(value => {
+      this.formatearNumero(value);
+    });*/
   }
 
   isLinear = false;
@@ -133,7 +141,7 @@ export class InscriptionComponent {
 
   convertToUSD(){
     const totalGlobal = this.calcularTotalGlobal();
-    const exchangeRate = 1; // Asigna el tipo de cambio actual
+    const exchangeRate = 4000; // Asigna el tipo de cambio actual
     return totalGlobal / exchangeRate;
   }
 
@@ -141,9 +149,6 @@ export class InscriptionComponent {
 actualizarTotales(): void {
   const totalGlobal = this.calcularTotalGlobal();
   const totalGlobalUSD = this.convertToUSD();
-
-  console.log(totalGlobal)
-  console.log(totalGlobalUSD)
 
   this.registerForm.patchValue({
     totalGlobal: totalGlobal,
@@ -191,6 +196,21 @@ actualizarTotales(): void {
       });
     }
   });
+
+  /* FORMATEAR LOS VALORES NUMERICOS*/
+
+  // Método para formatear el valor con separación de miles
+  formatearNumero(value: string) {
+    // Elimina cualquier carácter que no sea número
+    const soloNumeros = value.replace(/\D/g, '');
+
+
+    // Convierte el valor a un número y lo formatea con separación de miles
+    const valorFormateado = soloNumeros.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+    // Actualiza el valor del campo de entrada con el valor formateado
+    this.registerForm.get('totalDebt')?.setValue(valorFormateado, { emitEvent: false });
+  }
 }
 
 

@@ -3,14 +3,21 @@
   box-shadow: 0 0px 20px #F1C40F;
 }
 
-
 .title {
   color: #fff;
+  font-family: 'Cinzel', serif;
 }
 
 .contenido {
   background: linear-gradient(to right, #031f57, #0747b6);
-
-  font-family: 'Cinzel', serif;
   padding: 20px;
+}
+
+th,
+td, .inputBuscar {
+  font-family: "Poppins", sans-serif;
+}
+
+td,th{
+  text-align: end;
 }
