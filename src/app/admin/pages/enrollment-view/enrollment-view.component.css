@@ -1,0 +1,55 @@
+.contenido {
+  margin: 2% 5% 0;
+  box-shadow: 0 0px 20px #F1C40F;
+}
+
+.title {
+  padding-top: 5%;
+}
+
+h1,
+h2,
+h3,
+h4,h5 {
+  font-family: 'Cinzel', serif;
+  text-align: center;
+}
+
+p{
+    font-family: "Poppins", sans-serif;
+  text-align: center;
+
+}
+
+h2,
+h3,
+h4,p, h5{
+  color: #fff;
+}
+
+.diner {
+  font-weight: bold;
+}
+
+.card{
+    background-color: transparent;
+    padding: 2%;
+}
+
+.fa-file-pdf {
+  font-size: 40px;
+  background-image: linear-gradient(to right,  #eab308 , #fef08a );
+  color: transparent;
+  background-clip: text;
+}
+
+.pdf-container {
+  display: flex;
+  align-items: center;
+  padding-top: 3%;
+}
+
+.contenido {
+  background: linear-gradient(to right, #031f57, #0747b6);
+  padding: 20px;
+}

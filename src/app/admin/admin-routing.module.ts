@@ -10,6 +10,7 @@ import { UpdatePasswordComponent } from './pages/update-password/update-password
 
 // Guards
 import { AuthGuard } from './guards/auth.guard';
+import { EnrollmentViewComponent } from './pages/enrollment-view/enrollment-view.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
       children: [
         { path: 'login', component: LoginComponent },
         { path: 'manageEnrollments', component: ManageEnrollmentsComponent, canActivate: [AuthGuard] },
+        { path: 'manageEnrollments/:id', component: EnrollmentViewComponent},
         { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
         { path: 'update-password', component: UpdatePasswordComponent, canActivate: [AuthGuard] },
         { path: '', redirectTo: 'login', pathMatch: 'full'},

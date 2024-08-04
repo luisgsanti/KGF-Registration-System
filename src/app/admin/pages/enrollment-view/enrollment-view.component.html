@@ -1,0 +1,61 @@
+<div *ngIf="enrollment" class="pt-1 pb-10">
+  <div class="contenido">
+
+    <h1
+      class="title text-center bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-yellow-200 hover:from-yellow-200 hover:via-yellow-400 hover:to-yellow-500">
+      {{this.enrollment.name}}
+    </h1>
+    <hr>
+    <h2>
+      DNI: {{this.enrollment.identificationNumber}}
+    </h2>
+    <br>
+    <h3>
+      Total a financiar (USD): <span class="diner">
+        {{ this.enrollment.totalGlobalUDS | currency:'USD':'symbol':'1.2-2' }} </span>
+    </h3>
+    <h4>
+      En moneda local ({{this.enrollment.country}}): <span class="diner">
+        {{ this.enrollment.totalGlobal | currency:'USD':'symbol':'1.2-2' }} </span>
+    </h4>
+
+    <div class="card">
+      <h5>Documentos:</h5>
+      <ul class="docs">
+        <div class="pdf-container">
+          <i class="fa-solid fa-file-pdf"></i>
+          <p>Descargar documento de identidad</p>
+        </div>
+        <div class="pdf-container">
+          <i class="fa-solid fa-file-pdf"></i>
+          <p>Descargar certificación bancaria</p>
+        </div>
+        <div class="pdf-container">
+          <i class="fa-solid fa-file-pdf"></i>
+          <p>Descargar comprobante de deuda</p>
+        </div>
+        <div class="pdf-container">
+          <i class="fa-solid fa-file-pdf"></i>
+          <p>Descargar cotización casa</p>
+        </div>
+        <div class="pdf-container">
+          <i class="fa-solid fa-file-pdf"></i>
+          <p>Descargar cotización vehiculo</p>
+        </div>
+        <div class="pdf-container">
+          <i class="fa-solid fa-file-pdf"></i>
+          <p>Descargar cotización muebles</p>
+        </div>
+        <div class="pdf-container">
+          <i class="fa-solid fa-file-pdf"></i>
+          <p>Descargar cotización emprendimiento</p>
+        </div>
+      </ul>
+
+    </div>
+    <hr>
+    <div class="card">
+      <h5> Datos personales</h5>
+    </div>
+  </div>
+</div>
