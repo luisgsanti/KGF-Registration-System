@@ -1,3 +1,18 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+  
+body {
+    background: linear-gradient(to right, #101042, #00318d);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    min-height: 100vh; /* Asegura que el body tome al menos el 100% de la altura */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +21,10 @@
 }
 
 .wrapper {
-    margin: 2% auto;
-    max-width: 350px;
-    min-height: 550px;
-    padding: 0px 30px 30px 30px;
+    max-width: 310px;
+    width: 310px;
+    min-height: 510px;
+    padding: 10px 30px 30px 30px;
     box-shadow: 0 0px 20px #F1C40F;
     background: linear-gradient(to right, #031f57, #0747b6);
 }
@@ -20,6 +35,13 @@
     letter-spacing: 1.3px;
     color: #555
 }
+
+.botton-hover:hover {
+    background: #F1C40F;
+    transform: scale(1.05);
+    transition: all 0.4s ease;
+  }
+
 
 @media(max-width: 380px) {
     .wrapper {
