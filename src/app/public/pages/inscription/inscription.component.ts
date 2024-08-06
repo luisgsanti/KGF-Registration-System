@@ -24,6 +24,7 @@ import { CurrencyPipe } from '@angular/common';
 export class InscriptionComponent {
 
   registerForm: FormGroup;
+  private updatingTotals = false;
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -64,7 +65,9 @@ export class InscriptionComponent {
       totalGlobalUDS: ['0'],
     });
     this.registerForm.valueChanges.subscribe(values => {
-      this.actualizarTotales();
+      if (!this.updatingTotals) {
+        this.actualizarTotales();
+      }
     });
 
     /*this.registerForm.get('totalDebt')?.valueChanges.subscribe(value => {
@@ -147,13 +150,17 @@ export class InscriptionComponent {
 
 
 actualizarTotales(): void {
+  this.updatingTotals = true;
+
   const totalGlobal = this.calcularTotalGlobal();
   const totalGlobalUSD = this.convertToUSD();
 
   this.registerForm.patchValue({
     totalGlobal: totalGlobal,
-    totalGlobalUDS: totalGlobalUSD
-  });
+    totalGlobalUSD: totalGlobalUSD
+  }, { emitEvent: false });
+
+  this.updatingTotals = false;
 }
 
   capturarArchivoPdf(event: any,  posicionArchivo: number) {
