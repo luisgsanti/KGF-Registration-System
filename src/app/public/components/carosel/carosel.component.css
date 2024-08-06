@@ -1,0 +1,16 @@
+.flecha {
+    width: 30%;
+    height: 20%; 
+}
+
+.carousel-control-prev, .carousel-control-next {
+    opacity: 1;
+}
+
+.carousel-vertical {
+    height: 500px;
+}
+
+.carousel-inner img {
+    object-fit: cover;
+}
