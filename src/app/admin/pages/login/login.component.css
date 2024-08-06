@@ -21,8 +21,8 @@ body {
 }
 
 .wrapper {
-    max-width: 310px;
-    width: 310px;
+    max-width: 320px;
+    width: 320px;
     min-height: 510px;
     padding: 10px 30px 30px 30px;
     box-shadow: 0 0px 20px #F1C40F;
@@ -40,7 +40,7 @@ body {
     background: #F1C40F;
     transform: scale(1.05);
     transition: all 0.4s ease;
-  }
+}
 
 
 @media(max-width: 380px) {

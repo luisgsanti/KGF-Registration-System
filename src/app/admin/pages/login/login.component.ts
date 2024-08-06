@@ -36,7 +36,7 @@ export class LoginComponent {
 
     // Validamos que el usuario ingrese datos
     if (this.username == '' || this.password == '') {
-      this.toastr.error('Todos los campos son obligatorios', 'Error');
+      this.toastr.warning('Todos los campos son obligatorios', 'Recomendación');
       return
     }
 

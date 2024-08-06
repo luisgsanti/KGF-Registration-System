@@ -1,3 +1,78 @@
 <footer>
-    <p>footer works! Este es el pie de pagina</p> 
+
+    <section class="footer__container container">
+          
+        <form class="footer__form"(ngSubmit)="onSubmit(emailForm)" #emailForm="ngForm">
+            <h2 class="footer__newsletter">Contactanos, envianos un mensaje</h2>
+            
+            <div class="footer__inputs">
+                <div class="form-group" style="padding-bottom: 5px;">
+                    <input type="text" class="form-control" placeholder="Nombre:" name="name" id="name" ngModel required
+                            #nameInput="ngModel" [ngClass]="{'is-valid': nameInput.valid && (nameInput.dirty || nameInput.touched), 'is-invalid': nameInput.invalid && (nameInput.dirty || nameInput.touched)}">
+                    <div class="valid-feedback">Campo válido</div>
+                    <div class="invalid-feedback" *ngIf="nameInput.invalid && (nameInput.dirty || nameInput.touched)">Campo requerido</div>
+                </div>
+            
+                <div class="form-group" style="padding-bottom: 5px;">
+                    <input type="email" class="form-control" placeholder="Email:" name="email" id="email" ngModel required
+                            #emailInput="ngModel" [ngClass]="{'is-valid': emailInput.valid && (emailInput.dirty || emailInput.touched), 'is-invalid': emailInput.invalid && (emailInput.dirty || emailInput.touched)}">
+                    <div class="valid-feedback">Campo válido</div>
+                    <div class="invalid-feedback" *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)">Campo requerido</div>
+                </div>
+            
+                <div class="form-group" style="padding-bottom: 5px;">
+                    <textarea class="form-control" style="height: 70px;" name="message" placeholder="Mensaje:" id="message" ngModel required
+                                #messageInput="ngModel" [ngClass]="{'is-valid': messageInput.valid && (messageInput.dirty || messageInput.touched), 'is-invalid': messageInput.invalid && (messageInput.dirty || messageInput.touched)}"></textarea>
+                    <div class="valid-feedback">Campo válido</div>
+                    <div class="invalid-feedback" *ngIf="messageInput.invalid && (messageInput.dirty || messageInput.touched)">Campo requerido</div>
+                </div>
+                <button type="button submit" class="btn botton-hover btn-primary btn-lg py-2">Enviar</button>
+
+            </div>
+        </form>
+
+        <a class="columna">
+            <a class="logoPersoneriaContactos">
+                <img src="assets/img/logo-reducido.png" alt="Logo" width="300" height="300" class="animated-image">
+                <h3 class="font-bold">
+                    #KingdomGraceFundation
+                </h3> 
+            </a>
+        </a>
+    </section>
+
+    <div class="contenedor-footer">        
+        <div class="content-foo">
+            <h4>Horarios de atención</h4>
+            <p>Lunes a Viernes</p>
+            <p>8:00 am a 12:00 pm</p>
+            <p>2:00 pm a 5:00 pm</p>
+        </div>
+        <div class="content-foo">
+            <h4>Localización</h4>
+            <p>Sede principal Calle 14 No. 6 - 44</p>
+            <p>Valledupar - Cesar - Colombia</p>
+        </div>
+        <div class="content-foo">
+            <h4>Teléfonos</h4>
+            <p>605 5858364</p>
+            <p>605 5858372</p>
+        </div>   
+    </div>
+
+    <!--redes sociales-->
+    <section class="footer__copy container" data-aos="zoom-in" data-aos-anchor-placement="center-bottom" data-aos-duration="2000">
+        <div class="footer__icons">
+            <h4>Siguenos en nuestras redes</h4>
+            <div class="footer__links">
+                <a target="_blank"><img src="/assets/img/logo-facebook.png" class="footer__img"></a>
+                <a target="_blank"><img src="/assets/img/logo-instagram.svg" class="footer__img"></a>
+                <a target="_blank"><img src="/assets/img/logo-youtube.png" class="footer__img"></a>
+                <a target="_blank"><img src="/assets/img/logo-x.png" class="footer__img"></a>
+            </div>
+        </div>     
+        <h3 class="footer__copyright">&copy; Copyright <b>Kingdom Grace Fundation</b></h3>
+    </section>
+
 </footer>
+    

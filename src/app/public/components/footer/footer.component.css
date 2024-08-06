@@ -1,0 +1,139 @@
+footer {
+    color: #ffff;
+    font-family: "Poppins", sans-serif;
+    padding: 0 0 30px 0;
+    background: linear-gradient(to top, #101042, #00318d); 
+}
+
+.contenedor-footer{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin: auto;
+    border-bottom: 1px solid #ccc;
+}
+
+.content-foo{
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.content-foo h4{
+    border-bottom: 3px solid #F1C40F;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.content-foo p{
+    font-size: 1.063rem;
+}
+
+.footer__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.botton-hover:hover {
+    background: #F1C40F;
+    transform: scale(1.05);
+    transition: all 0.4s ease;
+}
+
+
+
+.logoPersoneriaContactos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.footer__inputs {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-right: 15px;
+}
+
+.footer__input {
+    background-color: #fff;
+    height: 50px;
+    display: block;
+    padding-left: 10px;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.footer__copy{
+    --padding-container: 10px 0;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.footer__copyright{
+    font-weight: 300;
+
+}
+
+.footer__icons{
+    margin-bottom: 10px;
+}
+
+.footer__links {
+    display: flex;
+    justify-content: center; /* Centra los enlaces horizontalmente */    
+    margin-top: 10px; /* Espacio entre el h4 y los enlaces */
+}
+
+.footer__img{
+    margin-right: 5px;
+    margin-bottom: 10px;
+    width: 2.188rem;
+    height: 2.188rem;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+    transition: transform 0.3s ease;
+}
+
+.footer__img:hover {
+    transform: scale(1.2);
+}
+
+/********************************************/
+  /*===========Media de Footer Contactos===============*/
+
+  @media (max-width: 990px) {
+    .logoPersoneriaContactos{
+        display: none;
+    }
+  }
+
+  @media (max-width: 990px) {
+    .offcanvas-title {
+      margin-top: 10px;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: bold;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .footer__form{
+        width: 100%;
+    }
+  }
+  
+  @media screen and (max-width:770px){
+    .contenedor-footer{
+      flex-direction: column; 
+    }
+  }
