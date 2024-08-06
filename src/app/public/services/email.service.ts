@@ -22,6 +22,6 @@ export class EmailService {
       reply_to: data.email, // Dirección de correo del remitente (se obtiene desde el formulario)
     };
 
-    return emailjs.send(this.service_id, this.template_id, emailParams);
+    return emailjs.send('default_service', this.template_id, emailParams);
   }
 }
